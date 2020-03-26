@@ -35,6 +35,8 @@ altMask = mod1Mask
 myKeys conf = M.fromList $
     [ ((myModMask              , xK_Return), spawn $ XMonad.terminal conf)
     , ((myModMask              , xK_r     ), spawn "dmenu_run -b")
+    , ((myModMask              , xK_f     ), spawn "firefox")
+    , ((myModMask              , xK_g     ), spawn "google-chrome")
     , ((myModMask              , xK_c     ), kill)
     , ((myModMask              , xK_space ), sendMessage NextLayout)
     , ((myModMask              , xK_n     ), refresh)
@@ -73,7 +75,7 @@ main = do
                         , ppTitle = xmobarColor "green" "" . shorten 75
                         , ppLayout = const ""
                         }
-        , terminal = "urxvt"
+        , terminal = "alacritty"
         , workspaces = myWorkspaces
         , keys = myKeys
         }
