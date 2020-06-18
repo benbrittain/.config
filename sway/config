@@ -27,6 +27,9 @@ bindswitch --reload --locked lid:off output $laptop enable
 bindsym $mod+shift+o output $laptop disable
 bindsym $mod+shift+n output $laptop enable
 
+# Lock screen
+bindsym $mod+shift+z exec swaylock -e -c D3D3D3 -F
+
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/ben/wallpaper.jpg fill
 
