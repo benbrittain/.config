@@ -15,6 +15,10 @@ set $laptop eDP-1
 # Note: it's recommended that you pass the final command to sway
 set $menu bemenu-run -p ">" -b
 
+# screencapture
+bindsym --release Print exec grim
+bindsym --release Control+Print exec grim -g \"$(slurp)"
+
 # Disable screen when closed
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
