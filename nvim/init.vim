@@ -16,7 +16,11 @@ Plug 'morhetz/gruvbox'
 Plug 'rust-lang/rust.vim'
 Plug 'neovim/nvim-lsp'
 Plug 'tpope/vim-fugitive'
+Plug 'ziglang/zig.vim'
+Plug 'luochen1990/rainbow'
 call plug#end()
+
+let g:rainbow_active = 1
 
 " color scheme
 colorscheme gruvbox
@@ -63,6 +67,10 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
+" syntax highlighting for wisp
+autocmd BufNewFile,BufRead *.wisp set syntax=clojure
+autocmd BufNewFile,BufRead *.wisp set filetype=clojure
+
 " lsp support
 lua << EOF
 
@@ -82,10 +90,6 @@ require'nvim_lsp'.rust_analyzer.setup({
     }
   };
 })
-
--- TODO
--- require'nvim_lsp'.clangd.setup()
-
 EOF
 
 " autocomplete
@@ -97,3 +101,6 @@ autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 " lsp key mappings
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+
+" because makefiles
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
