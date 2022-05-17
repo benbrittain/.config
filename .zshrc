@@ -12,6 +12,9 @@ export ZSH=~/.oh-my-zsh
 export ZSH_THEME="bwb"
 export DEFAULT_USER=ben
 
+# disable oh-my-zsh auto update
+DISABLE_AUTO_UPDATE=true
+
 # oh-my-zsh plugins (before sourcing)
 plugins=(rust git)
 
