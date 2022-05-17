@@ -208,6 +208,10 @@ autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 " lsp key mappings
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 
 " because makefiles
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
+
