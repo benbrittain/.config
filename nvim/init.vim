@@ -18,20 +18,28 @@ set encoding=utf8
 
 " plugins
 call plug#begin(stdpath('data') . '/plugged')
+
 " LSP for Rust
 Plug 'neovim/nvim-lspconfig'
 Plug 'simrat39/rust-tools.nvim'
+
 " Completion framework used by LSP
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-buffer'
 
+" style
 Plug 'morhetz/gruvbox'
+
 Plug 'rust-lang/rust.vim'
+
+" Rainbow Parens
 Plug 'luochen1990/rainbow'
+
 call plug#end()
 
 let g:rainbow_active = 1
@@ -47,6 +55,9 @@ filetype plugin indent on
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+
+autocmd BufWritePre *.rs :%s/\s\+$//e
+autocmd BufWritePre *.toml :%s/\s\+$//e
 
 " highlight whitespace
 " change #cc241dd to red if not using gruvbox
@@ -75,7 +86,7 @@ local nvim_lsp = require'lspconfig'
 local opts = {
     tools = { -- rust-tools options
         autoSetHints = true,
-        hover_with_actions = true,
+        RustHoverActions = true,
         inlay_hints = {
             show_parameter_hints = false,
             parameter_hints_prefix = "",
