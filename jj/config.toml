@@ -1,0 +1,55 @@
+[user]
+name = "Benjamin Brittain"
+email = "ben@brittain.org"
+
+[ui]
+editor = "nvim"
+default-command = "log"
+diff-editor = ":builtin"
+merge-editor = ":builtin"
+log-synthetic-elided-nodes = true
+
+[template-aliases]
+'label_node(content)' = '''
+label("node",
+  coalesce(
+    if(!self, label("elided", content)),
+    if(immutable, label("immutable", content)),
+    if(description.starts_with("wip: "), label("node wip", content)),
+    if(conflict, label("conflict", content)),
+    if(current_working_copy, label("working_copy", content)),
+    label("normal", content)
+  )
+)
+'''
+
+[templates]
+log_node = '''
+label_node(
+  coalesce(
+    if(!self, "~"),
+    if(root, "┴"),
+    if(current_working_copy, "@"),
+    if(immutable, "◆"),
+    if(description.starts_with("wip: "), "!"),
+    if(conflict, "×"),
+    "○"
+  )
+)
+'''
+op_log_node = 'if(current_operation, "@", "○")'
+
+# These colors are oriented around working with everforest dark
+[colors]
+"change_id prefix" = { fg = "green", bold = true }
+"change_id rest" = "white"
+"commit_id prefix" = { fg = "green", bold = true }
+"commit_id rest" = "white"
+"node" = { bold = true }
+"node working_copy" = { fg = "green" }
+"node immutable" = { fg = "cyan" }
+"node conflict" = { fg = "red" }
+"node wip " = { fg = "bright blue", bold = true }
+"node normal" = { bold = false }
+"node elided" = { fg = "white" }
+"elided" = "white"

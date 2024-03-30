@@ -7,3 +7,4 @@
 * zsh/oh-my-zsh
 * kitty
 * picom (compositor for transparency)
+* jj
