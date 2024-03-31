@@ -1,62 +1,107 @@
-/* ==========================================================================
-   Rofi color theme
-
-   Based on the Gruvbox color scheme for Vim by morhetz
-   https://github.com/morhetz/gruvbox
-
-   File: gruvbox-dark-hard.rasi
-   Desc: Gruvbox dark (hard contrast) color theme for Rofi
-   Author: bardisty <b@bah.im>
-   Source: https://github.com/bardisty/gruvbox-rofi
-   Modified: Mon Feb 12 2018 06:04:26 PST -0800
-   ========================================================================== */
+/*******************************************************************************
+ * ROFI SQUARED THEME USING THE EVERFOREST PALETTE 
+ * User                 : LR-Tech               
+ * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
+ *******************************************************************************/
 
 * {
-    /* Theme settings */
-    highlight: bold italic;
-    scrollbar: true;
+    font:   "BerkeleyMono 12";
 
-    /* Gruvbox dark colors */
-    gruvbox-dark-bg0-hard:     #1d2021;
-    gruvbox-dark-bg0:          #282828;
-    gruvbox-dark-bg2:          #504945;
-    gruvbox-dark-fg0:          #fbf1c7;
-    gruvbox-dark-fg1:          #ebdbb2;
-    gruvbox-dark-red-dark:     #cc241d;
-    gruvbox-dark-red-light:    #fb4934;
-    gruvbox-dark-yellow-dark:  #d79921;
-    gruvbox-dark-yellow-light: #fabd2f;
-    gruvbox-dark-gray:         #a89984;
+    bgdark:     #272E33;
+    bgalt:     #3C4841;
+    bggreen:     #56635F;
+    fg0:     #A7C080;
 
-    /* Theme colors */
-    background:                  @gruvbox-dark-bg0-hard;
-    background-color:            @background;
-    foreground:                  @gruvbox-dark-fg1;
-    border-color:                @gruvbox-dark-gray;
-    separatorcolor:              @border-color;
-    scrollbar-handle:            @border-color;
+    accent-color:     #A7C080;
+    urgent-color:     #DBBC7F;
 
-    normal-background:           @background;
-    normal-foreground:           @foreground;
-    alternate-normal-background: @gruvbox-dark-bg0;
-    alternate-normal-foreground: @foreground;
-    selected-normal-background:  @gruvbox-dark-bg2;
-    selected-normal-foreground:  @gruvbox-dark-fg0;
+    background-color:   transparent;
+    text-color:         @fg0;
 
-    active-background:           @gruvbox-dark-yellow-dark;
-    active-foreground:           @background;
-    alternate-active-background: @active-background;
-    alternate-active-foreground: @active-foreground;
-    selected-active-background:  @gruvbox-dark-yellow-light;
-    selected-active-foreground:  @active-foreground;
-
-    urgent-background:           @gruvbox-dark-red-dark;
-    urgent-foreground:           @background;
-    alternate-urgent-background: @urgent-background;
-    alternate-urgent-foreground: @urgent-foreground;
-    selected-urgent-background:  @gruvbox-dark-red-light;
-    selected-urgent-foreground:  @urgent-foreground;
+    transparent: rgba(0,0,0,0);
 }
 
-@import "gruvbox-common.rasi"
+window {
+    location:   center;
+    anchor: center;
+    transparency: "screenshot";
+    padding: 5px;
+    border: 0px;
 
+    background-color:   @transparent;
+    spacing: 0;
+    children: [mainbox];
+    orientation: horizontal;
+}
+
+mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+}
+
+message {
+    color: @bggreen;
+    padding: 5px;
+    border-color: @fg0;
+    border: 0px 2px 2px 2px;
+    background-color: @bgdark;
+}
+
+inputbar {
+    color: @fg0;
+    padding:    11px;
+    background-color:   @bgalt;
+
+    border: 1px;
+    border-color: @bggreen;
+}
+
+entry, prompt, case-indicator {
+    text-font: inherit;
+    text-color:inherit;
+}
+
+prompt {
+    margin: 0px 1em 0em 0em ;
+}
+
+listview {
+    padding: 8px;
+    border-color: @bggreen;
+    border: 0px 1px 1px 1px;
+    background-color: rgba(46,52,64,0.9);
+    dynamic: false;
+}
+
+element {
+    padding: 3px;
+    vertical-align: 0.5;
+    background-color: transparent;
+    color: @fg0;
+    text-color: rgb(216, 222, 233);
+}
+
+element selected.normal {
+	background-color: @accent-color;
+	text-color: #2e3440;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+button {
+    padding: 6px;
+    color: @fg0;
+    horizontal-align: 0.5;
+
+    border: 2px 0px 2px 2px;
+    border-radius: 4px 0px 0px 4px;
+    border-color: @bggreen;
+}
+
+button selected normal {
+    border: 2px 0px 2px 2px;
+    border-color: @fg0;
+}
