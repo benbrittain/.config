@@ -47,7 +47,7 @@ statusline3 = "#E67E80"
 disabled = true
 
 [jj_status]
-change_id_prefix_style = "fg:green"
+change_id_prefix_style = "fg:yellow"
 change_id_suffix_style = "fg:grey1"
 format = '[[$change_id_prefix]($change_id_prefix_style)[$change_id_suffix]($change_id_suffix_style)]($style) '
 
@@ -65,7 +65,7 @@ style_root = "fg:purple"
 format = '[$user ]($style)'
 
 [directory]
-style = "fg:yellow"
+style = "fg:green"
 format = "[$path ]($style)"
 fish_style_pwd_dir_length = 1
 truncation_length = 2

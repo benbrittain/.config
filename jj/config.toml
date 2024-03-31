@@ -41,9 +41,9 @@ op_log_node = 'if(current_operation, "@", "○")'
 
 # These colors are oriented around working with everforest dark
 [colors]
-"change_id prefix" = { fg = "green", bold = true }
+"change_id prefix" = { fg = "yellow", bold = true }
 "change_id rest" = "white"
-"commit_id prefix" = { fg = "green", bold = true }
+"commit_id prefix" = { fg = "yellow", bold = true }
 "commit_id rest" = "white"
 "node" = { bold = true }
 "node working_copy" = { fg = "green" }
@@ -53,3 +53,6 @@ op_log_node = 'if(current_operation, "@", "○")'
 "node normal" = { bold = false }
 "node elided" = { fg = "white" }
 "elided" = "white"
+"email" = "blue"
+"username" = "blue"
+"working_copy email" = "green"
