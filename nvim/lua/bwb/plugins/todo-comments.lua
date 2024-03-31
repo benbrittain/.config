@@ -12,9 +12,18 @@ return {
         default = { "Identifier", "#A7C080" },
         test = { "Identifier", "#D699B6" }
       },
-    --     strategy = {},
-    --     query = {},
-    --     highlight = {},
+      search = {
+        command = "rg",
+        args = {
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--no-require-git",
+        },
+        pattern = [[\b(KEYWORDS):]], -- ripgrep regex
+      },
     })
   end,
 }
