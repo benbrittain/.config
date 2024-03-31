@@ -1,0 +1,82 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = """
+$username\
+$directory\
+$conda\
+$git_branch\
+$git_commit\
+$git_status\
+$jj_status\
+$character"""
+
+palette = 'everforest'
+
+[palettes.everforest]
+bg_dim 	    = "#232A2E"
+bg0 	    = "#2D353B"
+bg1 	    = "#343F44"
+bg2 	    = "#3D484D"
+bg3 	    = "#475258"
+bg4 	    = "#4F585E"
+bg5 	    = "#56635f"
+bg_visual   = "#543A48"
+bg_red 	    = "#514045"
+bg_green    = "#425047"
+bg_blue     = "#3A515D"
+bg_yellow   = "#4D4C43"
+fg 	    = "#D3C6AA"
+red 	    = "#E67E80"
+orange 	    = "#E69875"
+yellow 	    = "#DBBC7F"
+green 	    = "#A7C080"
+aqua 	    = "#83C092"
+blue 	    = "#7FBBB3"
+purple 	    = "#D699B6"
+grey0 	    = "#7A8478"
+grey1 	    = "#859289"
+grey2 	    = "#9DA9A0"
+statusline1 = "#A7C080"
+statusline2 = "#D3C6AA"
+statusline3 = "#E67E80"
+
+[os]
+disabled = true
+
+[jj_status]
+change_id_prefix_style = "fg:green"
+change_id_suffix_style = "fg:grey1"
+format = '[[$change_id_prefix]($change_id_prefix_style)[$change_id_suffix]($change_id_suffix_style)]($style) '
+
+[git_status]
+style = "aqua"
+
+[git_branch]
+# remove "on"
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[username]
+show_always = false
+style_user = "fg:fg0"
+style_root = "fg:purple"
+format = '[$user ]($style)'
+
+[directory]
+style = "fg:yellow"
+format = "[$path ]($style)"
+fish_style_pwd_dir_length = 1
+truncation_length = 2
+
+[conda]
+format = '[[ $symbol( $environment) ]($style)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[>](bold fg:blue)'
+error_symbol = '[>](bold fg:red)'
