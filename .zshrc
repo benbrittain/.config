@@ -1,21 +1,47 @@
+# History
 HISTFILE=~/.histfile
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=1000000
+SAVEHIST=1000000
 
-# aliases
+# Aliases
 alias vim=nvim
 alias vi=nvim
 alias ssh="kitty +kitten ssh"
+alias ls='ls --color=auto'
 
-# exports
-export ZSH=~/.oh-my-zsh
-export ZSH_THEME="bwb"
-export DEFAULT_USER=ben
+# Path
+PATH=~/.cargo/bin:$PATH
 
-# disable oh-my-zsh auto update
-DISABLE_AUTO_UPDATE=true
+# Enable completions
+autoload -Uz compinit
+compinit
 
-# oh-my-zsh plugins (before sourcing)
-plugins=(rust git)
+# Enable zsh-autosuggestions
+export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source $ZSH/oh-my-zsh.sh
+# Enable fancy everforest LS_COLORS
+# generated using https://github.com/benbrittain/vivid
+# cargo run -- generate everforest > ~/.config/ls_colors
+export LS_COLORS=$(cat ~/.config/ls_colors)
+
+# Enable colors on autocomplete
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# Completion menu
+zstyle ':completion:*' menu select
+
+# jj autocompletions
+source <(jj util completion zsh)
+
+# Enable starship prompt
+eval "$(starship init zsh)"
+
+# Make delete work
+bindkey "^[[3~" delete-char
+
+# Pager configuration
+export LESS="FRX"
+
+# Bash ctrl-w works on words
+autoload -U select-word-style
+select-word-style bash
