@@ -19,7 +19,7 @@ opt.hlsearch = true
 opt.cursorline = true
 
 -- disable cursor
-opt.mouse=''
+opt.mouse = ''
 
 -- appearance
 

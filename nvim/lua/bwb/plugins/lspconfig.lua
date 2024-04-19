@@ -60,7 +60,14 @@ return {
     -- used to enable autocompletion
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
-    -- TODO add buck2 lsp, clangd
+    -- TODO add clangd
+
+    -- configure buck2/buckle lsp
+    lspconfig["buck2"].setup({
+      cmd = { 'buckle', 'lsp' },
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
 
     -- configure rust-analyzer
     lspconfig["rust_analyzer"].setup({

@@ -28,6 +28,7 @@ return {
           "markdown",
           "markdown_inline",
           "rust",
+          "starlark",
           "typescript",
           "vim",
           "yaml",
