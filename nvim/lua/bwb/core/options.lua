@@ -35,3 +35,7 @@ opt.clipboard:append("unnamedplus")
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- Enable spell check
+opt.spelllang = 'en_us'
+opt.spell = true
