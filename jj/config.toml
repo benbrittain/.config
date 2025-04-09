@@ -2,8 +2,11 @@
 name = "Benjamin Brittain"
 email = "ben@brittain.org"
 
+[git]
+write-change-id-header = true
+
 [ui]
-editor = "nvim"
+editor = "helix"
 default-command = "log"
 diff-editor = ":builtin"
 merge-editor = ":builtin"

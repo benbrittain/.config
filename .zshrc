@@ -8,9 +8,10 @@ alias vim=nvim
 alias vi=nvim
 alias ssh="kitty +kitten ssh"
 alias ls='ls --color=auto'
+alias h='helix'
 
 # Path
-PATH=~/.cargo/bin:$PATH
+PATH=~/bin:~/.cargo/bin:$PATH
 
 # Enable completions
 autoload -Uz compinit
@@ -45,3 +46,12 @@ export LESS="FRX"
 # Bash ctrl-w works on words
 autoload -U select-word-style
 select-word-style bash
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/ben/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/home/ben/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/ben/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/ben/bin/google-cloud-sdk/completion.zsh.inc'; fi
