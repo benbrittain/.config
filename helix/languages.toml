@@ -9,8 +9,15 @@ auto-format = true
 command = "buckle"
 args = [ "lsp" ]
 
+[language-server.codebook]
+command = "codebook-lsp"
+args = ["serve"]
 
-# disable until can figure out how to do pnp dependencies
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer", "codebook"]
+
+# Disable until I can figure out how to do pnp dependencies
 [[language]]
 name = "javascript"
 language-servers = [ ]

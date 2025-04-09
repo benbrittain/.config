@@ -1,0 +1,123 @@
+/* Everforest Dark Hard*/
+
+                                                               
+@define-color bg0 #2b3339;
+@define-color bg1 #323c41;
+@define-color bg2 #3a454a;
+@define-color bg3 #445055;
+@define-color bg4 #4c555b;
+@define-color bg5 #53605c;
+@define-color bg_visual #503946;
+@define-color bg_red #4e3e43;
+@define-color bg_green #404d44 ;
+@define-color bg_blue #394f5a;
+@define-color bg_yellow #4a4940;
+@define-color fg #d3c6aa;
+@define-color red #e67e80;
+@define-color orange #e69875;
+@define-color yellow #dbbc7f;
+@define-color green #a7c080;
+@define-color aqua #83c092;
+@define-color blue #7fbbb3;
+@define-color purple #d699b6;
+@define-color grey0 #7a8478;
+@define-color grey1 #859289;
+@define-color grey2 #9da9a0;
+
+* {
+    font-family: "Berkeley Mono", "Symbols Nerd Font";
+    font-size: 14px;
+    text-shadow: none;
+    all: unset;
+}
+
+window#waybar {
+    border-bottom: rgba(255, 255, 255, 0.2) solid 2px;
+    background-color: rgba(18, 18, 18, 0.85);
+    padding: 4px 12px;
+}
+
+.modules-left,
+.modules-right {
+    padding: 0 8px;
+}
+
+#clock,
+#cpu,
+#idle_inhibitor,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#window,
+#workspaces {
+    padding: 2px;
+}
+
+#workspaces button {
+    border: none;
+    border-radius: 0px;
+    padding: 0px 0px;
+    background: transparent;
+    color: #ffffff;
+    margin: 0 4px;
+    min-width: 24px;
+
+    transition-property: background, color, border, margin, padding;
+    transition-duration: 0.2s;
+}
+
+#workspaces button:hover {
+    /* background: rgba(255, 255, 255, 0.5); */
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#workspaces button.empty {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    border-bottom: 3px solid #ffffff;
+    margin-bottom: 1px;
+    padding: 0 4px;
+}
+
+#workspaces button.urgent {
+    color: #eb4d4b;
+    border-bottom: 3px solid #eb4d4b;
+}
+
+#clock {
+    color: #eefff1;
+}
+
+#cpu {
+    color: #FE968B;
+}
+
+#memory {
+    color: #FFEAAA;
+}
+
+#pulseaudio {
+    color: #a4e4fe;
+}
+
+#network {
+    color: #b0f5e5;
+}
+
+#idle_inhibitor {
+    color: #b0f5e5;
+}
+
+#tray {
+    border: rgba(255, 255, 255, 0.2) solid 2px;
+    color: transparent;
+}
+
+#window {
+    color: #e6f2d6;
+    margin-left: 4px;
+}

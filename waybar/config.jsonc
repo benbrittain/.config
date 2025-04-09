@@ -1,0 +1,104 @@
+{
+  "layer": "top",
+  "exclusive": true,
+  "reload_style_on_change": true,
+  "position": "top",
+  "spacing": 2,
+  "height": 36,
+  "modules-left": [
+    "niri/workspaces",
+    "niri/window"
+  ],
+  "modules-right": [
+    // "idle_inhibitor",
+    "tray",
+    "pulseaudio",
+    "network",
+    "memory",
+    "cpu",
+    "battery",
+    "clock"
+  ],
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  },
+  "clock": {
+    "tooltip": true,
+    "tooltip-format": "<small>{calendar}</small>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "left",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#d4be98'><b>{}</b></span>",
+        "weeks": "<span color='#7daea3'><b>W{}</b></span>",
+        "weekdays": "<span color='#d8a657'><b>{}</b></span>",
+        "days": "<span color='#d4be98'><b>{}</b></span>",
+        "today": "<span color='#e78a4e'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰛊",
+      "deactivated": "󰾫"
+    },
+    "tooltip": false
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "\uf4bc {usage:1}%",
+    "tooltip": true
+  },
+  "memory": {
+    "interval": 1,
+    "format": "\uefc5 {used:0.1f}G",
+    "tooltip": true,
+    "tooltip-format": " RAM: {used:0.2f}G / {total:0.2f}G\nSwap: {swapUsed:0.2f}G / {swapTotal:0.2f}G"
+  },
+  "network": {
+    "interval": 1,
+    "format-wifi": "\uf1eb {essid} ({signalStrength}%)",
+    "format-ethernet": "\uef09 {ifname}",
+    "format-linked": "\ueb32 No IP ({ifname})",
+    "format-disconnected": "\uf071 Disconnected"
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "{icon} {volume:2}%",
+    "format-muted": "\ueee8",
+    "format-bluetooth": "{icon}\uf294 {volume}%",
+    "format-bluetooth-muted": "\ueee8 {icon}\uf294",
+    "format-icons": {
+      "default": [
+        "\uf026",
+        "\uf027",
+        "\uf028"
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "battery": {
+    "bat": "BAT1",
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "max-length": 25
+  }
+}
