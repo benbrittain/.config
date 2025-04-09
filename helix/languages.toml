@@ -1,0 +1,28 @@
+[[language]]
+name = "starlark"
+language-servers = [ "buck2-lsp" ]
+formatter = { command = "buildifier" }
+file-types = ["bzl", "bazel", "star", { glob = "BUILD" }, { glob = "BUILD.*" }, { glob = "BUCK" }, { glob = "WORKSPACE" }, { glob = "PACKAGE" }, { glob = "WORKSPACE.bzlmod" }]
+auto-format = true
+
+[language-server.buck2-lsp]
+command = "buckle"
+args = [ "lsp" ]
+
+
+# disable until can figure out how to do pnp dependencies
+[[language]]
+name = "javascript"
+language-servers = [ ]
+
+[[language]]
+name = "typescript"
+language-servers = [ ]
+
+[[language]]
+name = "tsx"
+language-servers = [ ]
+
+[[language]]
+name = "jsx"
+language-servers = [ ]

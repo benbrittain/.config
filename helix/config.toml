@@ -1,0 +1,13 @@
+theme = "everforest-dark-hard"
+
+[editor]
+mouse = false
+gutters = ["diagnostics", "line-numbers", "spacer"]
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "warning" # show warnings and errors on the cursorline inline
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = ""
